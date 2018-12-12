@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import flatEarth from './Assets/flatEarth.png';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {Header, Button } from 'semantic-ui-react';
 import './App.css';
+// import { IssPage } from './IssPage.js';
 
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
-        <header className="App-header">
+        <Header className="App-header">
           <img src={ flatEarth } className="App-logo" alt="logo" />
-          <p>
+          <h2>
             International Space Station 
-          </p>
+          </h2>
           <div>
-            <button large > Launch
-            </button >  
+          
+          <Link to="./IssPage">ISS Info</Link>
+            <Button> 
+              Launch
+            </Button>  
           </div>
-        </header>
+        </Header>
       </div>
+      </Router>
     );
   }
 }
